@@ -1,0 +1,16 @@
+func ReadAllText(path)
+{
+    return OpenFile(path, "r");
+}
+
+func WriteAllText(path, value)
+{
+    return OpenFile(path, "w", value);
+}
+
+func ClearAllText(path)
+{
+    return OpenFile(path, "w", "");
+}
+
+// CreateFile(path) and DeleteFile(path) are built-in functions

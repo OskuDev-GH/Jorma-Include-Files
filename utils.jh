@@ -1,0 +1,9 @@
+func ForLoop(function, times)
+{
+    var i = 0;
+    while (i < times)
+    {
+        execfunc(function);
+        i++;
+    }
+}

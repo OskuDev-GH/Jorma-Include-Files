@@ -1,0 +1,105 @@
+//year
+func GetYear()
+{
+    return GetTime("yyyy");
+}
+
+
+//month
+func GetMonth()
+{
+    return GetTime("M");
+}
+
+func GetMonthName()
+{
+    return GetTime("MMM");
+}
+
+func GetLongMonthName()
+{
+    return GetTime("MMMM");
+}
+
+
+//day
+func GetDay()
+{
+    return GetTime("d");
+}
+
+func GetDayName()
+{
+    return GetTime("ddd");
+}
+
+func GetLongDayName()
+{
+    return GetTime("dddd");
+}
+
+
+//hour
+func GetHour12()
+{
+    return GetTime("h");
+}
+
+func GetHour24()
+{
+    return GetTime("H");
+}
+
+func GetAMPM()
+{
+    return GetTime("tt");
+}
+
+
+//minute
+func GetMinute()
+{
+    return GetTime("m");
+}
+
+
+//second
+func GetSecond()
+{
+    return GetTime("s");
+}
+
+func GetTenthOfSecond()
+{
+    return GetTime("f");
+}
+
+func GetHundrethOfSecond()
+{
+    return GetTime("ff");
+}
+
+func GetMilliSecond()
+{
+    return GetTime("fff");
+}
+
+func GetTenThousandsOfSecond()
+{
+    return GetTime("ffff");
+}
+
+func GetHundredThousandsOfSecond()
+{
+    return GetTime("fffff");
+}
+
+func GetMillionthsOfSecond()
+{
+    return GetTime("fffff");
+}
+
+func GetTenMillionthsOfSecond()
+{
+    return GetTime("fffff");
+}

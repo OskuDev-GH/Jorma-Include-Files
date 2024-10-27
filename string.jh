@@ -1,0 +1,150 @@
+func RemoveFirstChar(str, chr)
+{
+    var i = 0;
+    var c = "";
+    var result = "";
+    var done = false;
+
+    while (i < Len(str))
+    {
+        c = str[i];
+
+        if (c == chr1 && !done)
+        {
+            done = true;
+        }
+        else
+        {
+            result += c;
+        }
+
+        i++;
+    }
+
+    return result;
+}
+
+func RemoveAll(str, chr)
+{
+    var i = 0;
+    var c = "";
+    var result = "";
+
+    while (i < Len(str))
+    {
+        c = str[i];
+        if (c != chr)
+        {
+            result += c;
+        }
+
+        i++;
+    }
+
+    return result;
+}
+
+func ReplaceFirstChar(str, chr1, chr2)
+{
+    var i = 0;
+    var c = "";
+    var result = "";
+    var done = false;
+
+    while (i < Len(str))
+    {
+        c = str[i];
+
+        if (c == chr1 && !done)
+        {
+            result += chr2;
+
+            done = true;
+        }
+        else
+        {
+            result += c;
+        }
+
+        i++;
+    }
+
+    return result;
+}
+
+func ReplaceAllChars(str, chr1, chr2)
+{
+    var i = 0;
+    var c = "";
+    var result = "";
+
+    while (i < Len(str))
+    {
+        c = str[i];
+
+        if (c == chr1)
+        {
+            result += chr2;
+        }
+        else
+        {
+            result += c;
+        }
+
+        i++;
+    }
+
+    return result;
+}
+
+func ContainsSubstring(str, sub)
+{
+    var i = 0;
+    var subi = 0;
+    var c = "";
+    var temp = "";
+
+    while (i < Len(str))
+    {
+        c = str[i];
+
+        if (subi == Len(sub))
+        {
+            return true;
+        }
+
+        if (c == sub[subi])
+        {
+            subi++;
+        }
+        else
+        {
+            subi = 0;
+        }
+        
+        i++;
+    }
+
+    return false;
+}
+
+func StringToASCII(str)
+{
+    var result = "";
+    var lenght = Len(str);
+
+    var i = 0;
+    while (i < lenght)
+    {
+        result += ToASCII(str[i]);
+
+        if (i == lenght - 1)
+        {
+            result += ", ";
+        }
+
+        i++;
+    }
+
+    return result;
+}

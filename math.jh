@@ -1,0 +1,146 @@
+const PI = 3.14159265359f;
+const TAU = PI * 2;
+const PHI = 1.618033988749f;
+const E = 2.718281828f;
+const EPSILON = 0.000001f;
+
+func Flip(value)
+{
+    value = -value;
+
+    return value;
+}
+
+func Abs(value)
+{
+    if (value < 0)
+    {
+        value = -value;
+    }
+
+    return value;
+}
+
+func Pow(base, exponent)
+{
+    var result = 1;
+    var negative = exponent < 0;
+
+    if (negative)
+    {
+        exponent = -exponent;
+    }
+
+    var i = 0;
+    while (i < exponent)
+    {
+        result *= base;
+        i += 1;
+    }
+
+    if (negative)
+    {
+        result = 1 / result;
+    }
+
+    return result;
+}
+
+func Sqrt(value)
+{
+    if (value < 0)
+    {
+        Print("Cannot compute square root of a negative number.");
+    }
+
+    var guess = value / 2;
+
+    while ((guess * guess - value) > EPSILON || (value - guess * guess) > EPSILON)
+    {
+        guess = (guess + value / guess) / 2;
+    }
+
+    return guess;
+}
+
+func Factorial(n)
+{
+    if (n < 0)
+    {
+        Print("Factorial is not defined for negative numbers.");
+    }
+
+    var result = 1;
+    var i = 1;
+    while (i <= n)
+    {
+        result *= i;
+        i += 1;
+    }
+
+    return result;
+}
+
+func Sin(x)
+{
+    var term = x;
+    var result = term;
+    var sign = -1;
+    var i = 1;
+
+    while (abs(term) > EPSILON)
+    {
+        term = term * x * x / ((2 * i) * (2 * i + 1));
+        result += sign * term;
+        sign = -sign;
+        i += 1;
+    }
+
+    return result;
+}
+
+func Log(x)
+{
+    if (x <= 0)
+    {
+        Print("Logarithm is not defined for zero or negative numbers.");
+    }
+
+    var result = 0;
+    var n = (x - 1) / (x + 1);
+    var term = n;
+    var i = 1;
+
+    while (abs(term) > EPSILON)
+    {
+        result += term / (2 * i - 1);
+        term *= n * n;
+        i += 1;
+    }
+
+    return 2 * result;
+}
+
+func Min(a, b)
+{
+    var result = a;
+
+    if (b < a)
+    {
+        result = b;
+    }
+
+    return result;
+}
+
+func Max(a, b)
+{
+    var result = a;
+
+    if (b > a)
+    {
+        result = b;
+    }
+
+    return result;
+}
